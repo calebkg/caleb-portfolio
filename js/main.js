@@ -232,10 +232,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+
+            const nameInput = contactForm.querySelector('input[type="text"]');
+            const emailInput = contactForm.querySelector('input[type="email"]');
+            const messageInput = contactForm.querySelector('textarea');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            try {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                const formData = new FormData();
+                formData.append('name', nameInput.value);
+                formData.append('email', emailInput.value);
+                formData.append('message', messageInput.value);
+                formData.append('_captcha', 'false');
+
+                const response = await fetch('https://formsubmit.co/calebkariuki05@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    submitBtn.textContent = 'Message Sent! ✓';
+                    submitBtn.style.backgroundColor = '#28a745';
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                submitBtn.textContent = 'Error - Try Again';
+                submitBtn.style.backgroundColor = '#dc3545';
+                console.error('Form submission error:', error);
+
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
         });
     }
 
@@ -398,4 +442,4 @@ document.addEventListener('DOMContentLoaded', function() {
         cursor.style.display = 'block';
         cursorDot.style.display = 'block';
     });
-}); 
+});
