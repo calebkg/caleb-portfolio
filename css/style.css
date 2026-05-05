@@ -1094,4 +1094,66 @@ button:hover ~ .custom-cursor {
 .icon-circle i {
     font-size: 1.5rem;
     color: var(--bs-light);
-} 
+}
+
+/* Experience Section */
+.experience-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.experience-highlights ul li {
+    padding: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.experience-highlights {
+    background: var(--bs-light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+footer a {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.footer-section h6 {
+    color: var(--text-color);
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
