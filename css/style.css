@@ -2,10 +2,10 @@
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
-    --background-color: #DAA06D;
+    --background-color: #ffffff;
     --text-color: #212529;
-    --card-bg: #DAA06D;
-    --border-color: #c89060;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
     --transition: all 0.3s ease;
 }
 
@@ -29,9 +29,9 @@ body {
 /* Navigation */
 .navbar {
     backdrop-filter: blur(10px);
-    background-color: rgba(218, 160, 109, 0.95);
+    background-color: rgba(var(--background-color), 0.9);
     transition: var(--transition);
-    border-bottom: 2px solid rgba(0, 123, 255, 0.2);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-brand, .nav-link {
@@ -42,8 +42,6 @@ body {
 .card {
     background-color: var(--card-bg);
     border-color: var(--border-color);
-    border-radius: 12px;
-    border: 2px solid rgba(0, 123, 255, 0.15);
 }
 
 .card-body {
@@ -54,30 +52,11 @@ body {
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 24px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-
-.btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-    transform: translateY(-2px);
 }
 
 .btn-outline-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
-    font-weight: 600;
-    border-radius: 8px;
-    border-width: 2px;
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    transform: translateY(-2px);
 }
 
 [data-bs-theme="dark"] .btn-outline-primary:hover {
@@ -163,21 +142,20 @@ body {
 .hero-section .btn-lg {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
-    border-radius: 8px;
+    border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    background: linear-gradient(45deg, var(--primary-color), #00ff88);
     border: none;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
-    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero-section .btn-lg:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .hero-section .btn-lg:active {
@@ -210,11 +188,6 @@ body {
     position: relative;
 }
 
-#education.section-padding,
-#projects.section-padding {
-    background: linear-gradient(135deg, rgba(218, 160, 109, 0.5) 0%, rgba(218, 160, 109, 0.3) 100%);
-}
-
 /* Skills Section */
 .skill-item {
     margin-bottom: 1.5rem;
@@ -238,8 +211,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     color: var(--bs-body-color);
-    background-color: rgba(255, 255, 255, 0.85) !important;
-    border: 2px solid rgba(0, 123, 255, 0.15) !important;
 }
 
 [data-bs-theme="dark"] .portfolio-item {
@@ -247,43 +218,12 @@ body {
 }
 
 [data-bs-theme="dark"] .bg-light {
-    background-color: rgba(45, 50, 56, 0.8) !important;
-}
-
-.section-padding h2 {
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: #212529;
-}
-
-.section-padding h3 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    color: #212529;
-}
-
-.section-padding h4 {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #212529;
-}
-
-.section-padding h5 {
-    font-weight: 600;
-    color: #212529;
-}
-
-.lead {
-    font-weight: 500;
-    line-height: 1.7;
+    background-color: #2d3238 !important;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .portfolio-item img {
@@ -526,12 +466,11 @@ body {
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
-    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .floating-card:hover {
-    transform: translateY(-12px) rotateX(10deg);
-    box-shadow: 0 25px 50px rgba(0, 123, 255, 0.15);
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 /* Glowing Effect */
@@ -580,22 +519,18 @@ body {
 }
 
 .skill-tag {
-    padding: 10px 18px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-    color: #212529;
-    border: 2px solid rgba(0, 123, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     cursor: default;
-    font-weight: 500;
-    font-size: 0.9rem;
 }
 
 .skill-tag:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
-    border-color: rgba(0, 123, 255, 0.5);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Timeline */
@@ -633,22 +568,17 @@ body {
     width: 25px;
     height: 25px;
     right: -17px;
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     border: 4px solid var(--primary-color);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
     transition: all 0.3s ease;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
 .timeline-item:hover::after {
-    transform: scale(1.25);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
-}
-
-.timeline-item .card {
-    border: 2px solid rgba(0, 123, 255, 0.15) !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
 .timeline-item .card {
@@ -1169,15 +1099,13 @@ button:hover ~ .custom-cursor {
 /* Experience Section */
 .experience-card {
     transition: all 0.3s ease;
-    border: 2px solid rgba(0, 123, 255, 0.15) !important;
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .experience-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2);
-    border-color: rgba(0, 123, 255, 0.3) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .experience-highlights ul li {
@@ -1221,9 +1149,8 @@ button:hover ~ .custom-cursor {
 
 /* Footer */
 footer {
-    background-color: rgba(218, 160, 109, 0.9);
+    background-color: var(--card-bg);
     color: var(--text-color);
-    border-top: 2px solid rgba(0, 123, 255, 0.2);
 }
 
 footer a {
