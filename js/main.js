@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.portfolio-grid');
     if (grid) {
         const iso = new Isotope(grid, {
-            itemSelector: '.col-md-4',
+            itemSelector: '.col-md-6',
             layoutMode: 'fitRows'
         });
 
